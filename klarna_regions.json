@@ -1,0 +1,39 @@
+{
+  "regions": [
+    {
+      "x": 200,
+      "y": 300,
+      "width": 400,
+      "height": 60,
+      "blur_type": "gaussian",
+      "intensity": 20,
+      "pii_type": "credit_card",
+      "start_frame": 0,
+      "end_frame": -1
+    },
+    {
+      "x": 200,
+      "y": 400,
+      "width": 300,
+      "height": 40,
+      "blur_type": "gaussian",
+      "intensity": 15,
+      "pii_type": "email",
+      "start_frame": 0,
+      "end_frame": -1
+    },
+    {
+      "x": 200,
+      "y": 500,
+      "width": 250,
+      "height": 40,
+      "blur_type": "gaussian",
+      "intensity": 15,
+      "pii_type": "phone_number",
+      "start_frame": 0,
+      "end_frame": -1
+    }
+  ]
+}
+
+

@@ -1,0 +1,121 @@
+# PII Blur Tool - Cursor Rules
+
+## Project Overview
+This is a **LOCAL-ONLY** desktop application for blurring PII (Personally Identifiable Information) from website purchase videos. The tool must be extremely secure with no external data transmission.
+
+## Core Requirements
+
+### Security (CRITICAL)
+- **LOCAL PROCESSING ONLY**: No data leaves the user's machine
+- **NO EXTERNAL APIs**: All processing happens locally
+- **NO NETWORK CALLS**: Tool must work completely offline
+- **MEMORY SAFE**: Secure memory handling and cleanup
+- **CORPORATE COMPLIANT**: Safe for regulated industries (healthcare, finance, etc.)
+
+### UI Requirements (CRITICAL)
+- **DESKTOP APPLICATION**: Must be a working desktop app with proper UI
+- **BUTTONS & SLIDERS**: All features must be accessible via UI controls
+- **NO COMMAND LINE ONLY**: CLI is backup only, main interface must be GUI
+- **COMPREHENSIVE CONTROLS**: Every feature needs a UI element
+
+### Required UI Elements
+1. **Video Loading**: Button to select and load video files
+2. **Frame Navigation**: Slider and buttons to navigate through video frames
+3. **Opacity Control**: Slider with +/- buttons to adjust blur opacity (0.1-1.0)
+4. **Rectangle Drawing**: Click and drag on video to draw blur regions
+5. **Rectangle Management**: List, delete, clear all rectangles
+6. **Blur Type Selection**: Dropdown for gaussian, pixelate, black_box, white_box
+7. **PII Type Selection**: Dropdown for credit_card, email, phone, address, etc.
+8. **Frame Range Selection**: Sliders to set start/end seconds for blur regions
+9. **Save/Load Regions**: Buttons to save and load region configurations
+10. **Process Video**: Button to apply blur and create output video
+11. **Status Display**: Show current settings and processing status
+
+### Technical Stack
+- **Python**: Primary language
+- **OpenCV**: Video processing and blur effects
+- **PIL/Pillow**: Image manipulation
+- **NumPy**: Numerical operations
+- **UI Framework**: Must work reliably (avoid tkinter if problematic)
+- **Alternative UI Options**: Consider PyQt, Kivy, or web-based local UI
+
+### File Structure (3 Core Files)
+1. **blur_engine.py**: Core blurring engine with PII detection and video processing
+2. **blur_ui.py**: Main UI application with all controls
+3. **blur_cli.py**: Command-line backup interface
+
+### PII Types to Support
+- Credit card numbers
+- Email addresses
+- Phone numbers
+- Street addresses
+- SSNs
+- ZIP codes
+- Custom text regions
+
+### Blur Types
+- Gaussian (smooth blur)
+- Pixelate (blocky effect)
+- Black box (solid black)
+- White box (solid white)
+
+### Performance Requirements
+- Support video formats: MOV, MP4, AVI, MKV
+- Handle up to 4K resolution
+- Process at 30-60 FPS
+- Memory efficient for large files
+
+## Development Guidelines
+
+### When Building UI
+1. **TEST UI LIBRARIES FIRST**: Verify the UI framework works before building
+2. **HAVE BACKUP OPTIONS**: If one UI library fails, have alternatives ready
+3. **PRIORITIZE WORKING OVER PRETTY**: A functional UI is better than a broken beautiful one
+4. **COMPREHENSIVE CONTROLS**: Every feature needs a UI element, not just CLI flags
+
+### When Facing Issues
+1. **DON'T PERSIST WITH BROKEN UI**: If tkinter fails, try PyQt, Kivy, or web-based local UI
+2. **TEST EARLY AND OFTEN**: Run the UI immediately after basic setup
+3. **HAVE WORKING BACKUP**: Always ensure CLI works as fallback
+4. **FOCUS ON FUNCTIONALITY**: Get the core features working first, then polish
+
+### Security Checklist
+- [ ] No external network calls
+- [ ] All processing local
+- [ ] Secure memory cleanup
+- [ ] Input validation
+- [ ] No data persistence beyond user control
+- [ ] Audit logging
+
+### UI Checklist
+- [ ] Video loading button
+- [ ] Frame navigation controls
+- [ ] Opacity slider with +/- buttons
+- [ ] Rectangle drawing on video
+- [ ] Rectangle management (list, delete, clear)
+- [ ] Blur type dropdown
+- [ ] PII type dropdown
+- [ ] Frame range sliders
+- [ ] Save/load regions buttons
+- [ ] Process video button
+- [ ] Status display
+
+## Common Issues to Avoid
+1. **tkinter dependency issues**: Test UI libraries before building
+2. **Incomplete UI controls**: Every feature needs a UI element
+3. **Security violations**: Never send data externally
+4. **Over-complexity**: Keep it simple and functional
+5. **Missing backup options**: Always have CLI as fallback
+
+## Success Criteria
+- [ ] Working desktop application with full UI
+- [ ] All features accessible via buttons/sliders
+- [ ] Secure local processing only
+- [ ] Can load videos and draw blur regions
+- [ ] Can adjust opacity, blur type, frame ranges
+- [ ] Can save/load configurations
+- [ ] Can process videos successfully
+- [ ] CLI backup works when UI fails
+
+## Remember
+The goal is a **WORKING DESKTOP APP** with **COMPREHENSIVE UI CONTROLS** for **SECURE LOCAL PII BLURRING**. If the UI doesn't work, the project fails. Prioritize functionality over aesthetics.
