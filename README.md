@@ -44,6 +44,8 @@ Blurtool/
    pip install -r requirements.txt
    ```
 
+   **Python Compatibility**: Python 3.8+ (tested with Python 3.11 and 3.13)
+
 3. **Run the Application**:
    ```bash
    python3 blur_simple_ui.py
