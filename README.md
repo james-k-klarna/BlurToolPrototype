@@ -19,14 +19,16 @@ A secure, local-only desktop application for blurring Personally Identifiable In
 - **Real-time Preview**: See blur effects as you adjust settings
 - **Intensity Control**: Fine-tune blur strength (10-100%)
 
-## 📁 Project Structure (2 Core Files)
+## 📁 Project Structure
 
 ```
 Blurtool/
-├── blur_engine.py          # Core blurring engine
-├── blur_simple_ui.py      # Main UI application with buttons
-├── requirements.txt       # Dependencies
-└── README.md             # This file
+├── blur_engine.py              # Core blurring engine (for simple UI)
+├── blur_engine_advanced.py     # Enhanced blurring engine (for advanced UI)
+├── blur_simple_ui.py           # Simple UI application
+├── blur_advanced_ui.py          # Advanced UI application with enhanced features
+├── requirements.txt            # Dependencies
+└── README.md                   # This file
 ```
 
 ## 🚀 Quick Start
@@ -44,11 +46,23 @@ Blurtool/
    pip install -r requirements.txt
    ```
 
-   **Python Compatibility**: Python 3.8+ (tested with Python 3.11 and 3.13)
+   **Python Compatibility**: Python 3.8+ (tested with Python 3.9, 3.11, 3.13, and 3.14)
+   
+   **Note**: Requires Python 3.8+ due to:
+   - Pillow 10.0.0+ requirements (Image.Resampling)
+   - Modern typing features
+   - f-string support
 
 3. **Run the Application**:
+   
+   **Simple UI**:
    ```bash
    python3 blur_simple_ui.py
+   ```
+   
+   **Advanced UI** (recommended):
+   ```bash
+   python3 blur_advanced_ui.py
    ```
 
 ## 🎮 Usage
